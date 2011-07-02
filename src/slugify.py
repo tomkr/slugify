@@ -8,7 +8,7 @@ import unicodedata
 __version__ = '0.0.1'
 
 
-def slugify(string):
+def slugify(string, space='-'):
 
     """
     Slugify a unicode string.
@@ -20,7 +20,7 @@ def slugify(string):
 
     """
 
-    return re.sub(r'[-\s]+', '-',
+    return re.sub(r'[-\s]+', space,
             unicode(
                 re.sub(r'[^\w\s-]', '',
                     unicodedata.normalize('NFKD', string)
